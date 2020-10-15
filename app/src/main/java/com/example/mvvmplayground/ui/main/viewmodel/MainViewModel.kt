@@ -28,7 +28,7 @@ class MainViewModel(private val mainRepository: MainRepository) : ViewModel() {
             .subscribe({ usersList->
                 users.postValue(Resource.success(usersList))
             },{
-                throwable-> users.postValue(Resource.error("Something went wrong",null))
+            users.postValue(Resource.error("Something went wrong",null))
             })
         )
     }
